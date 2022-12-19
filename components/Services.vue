@@ -8,19 +8,19 @@
         <div class="flex flex-wrap justify-center gap-[2rem]">
 
             <div class="flex w-full flex-col max-w-[250px] justify-center items-center">
-                <div class="p-[1rem] rounded-full">
+                <div class="p-[1rem] text-client_color rounded-full">
                     <Icon size="40" name="ri:image-2-line" />
                 </div>
                 <span class="text-[20px] uppercase">Image Consultancy</span>
             </div>
             <div class="flex w-full flex-col max-w-[250px] justify-center items-center">
-                <div class="p-[1rem] rounded-full">
+                <div class="p-[1rem] text-client_color rounded-full">
                     <Icon size="40" name="ri:camera-lens-line" />
                 </div>
                 <span class="text-[20px] uppercase">Photography</span>
             </div>
             <div class="flex w-full flex-col max-w-[250px] justify-center items-center">
-                <div class="p-[1rem] rounded-full">
+                <div class="p-[1rem] text-client_color rounded-full">
                     <Icon size="40" name="ri:instagram-line" />
                     <Icon size="40" name="ri:facebook-line" />
                     <Icon size="40" name="ri:twitter-line" />
@@ -29,7 +29,7 @@
                 <span class="text-[20px] uppercase">Social Media Marketing</span>
             </div>
             <div class="flex w-full flex-col max-w-[250px] justify-center items-center">
-                <div class="p-[1rem] rounded-full">
+                <div class="p-[1rem] text-client_color rounded-full">
                     <Icon size="40" name="ri:advertisement-line" />
                 </div>
                 <span class="text-[20px] uppercase">Branding</span>

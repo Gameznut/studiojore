@@ -9,7 +9,11 @@ module.exports = {
     "./app.vue",
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        client_color: "#d49a9afd",
+      },
+    },
   },
   plugins: [],
 };

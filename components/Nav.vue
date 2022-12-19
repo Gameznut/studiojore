@@ -1,6 +1,6 @@
 <template>
     <header class="bg-[#ffffff] duration-300 nav fixed top-0 left-0 right-0 z-[100] ">
-        <nav class=" main_container flex justify-between !py-[1rem]">
+        <nav class=" main_container flex justify-between sm:flex-row flex-col !py-[1rem]">
             <div class="flex items-center gap-[1rem]">
                 logo
                 <NuxtLink to="#subscribe">Subscribe</NuxtLink>

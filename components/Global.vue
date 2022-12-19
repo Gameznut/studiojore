@@ -11,7 +11,7 @@
 
 
             <div>
-                <p class="text-center text-[25px] max-w-[700px] mx-auto my-[1rem]">“Visuals are processed 60,000 times
+                <p class="text-center text-[20px] max-w-[700px] mx-auto my-[1rem] font-bold">“Visuals are processed 60,000 times
                     faster
                     than text by the human brain
                     and 90% of information transmitted to the brain is visual"</p>
