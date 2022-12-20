@@ -10,14 +10,7 @@ export default defineNuxtConfig({
       title: "📷Studio Jore",
       script: [
         {
-          children: `window.addEventListener("load", function() {
-                      var preloader = document.getElementById("preloader");
-                        setTimeout(() => {
-                        preloader.style.opacity = 0;
-                        setTimeout(() => (preloader.style.display = 'none'), 600);
-                      }, 450);
-                    });
-          `,
+          src: "/loader.js",
         },
       ],
       meta: [

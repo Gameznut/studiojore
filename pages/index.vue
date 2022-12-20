@@ -18,8 +18,8 @@
             </swiper>
             <div class="absolute inset-0 z-10 bg-[#00000091] w-screen h-screen"></div>
             <div
-                class="absolute inset-0 owner text-animatison text-white sm:text-[100px] text-[30px] font-bold glowing-text text-center tracking-[1.5rem] z-10 grid place-items-center uppercase">
-                <div>
+                class="absolute inset-0 owner text-animatison text-[#d49a9afd] sm:text-[100px] text-[45px] font-bold glowing-text text-center tracking-[1.5rem] z-10 grid place-items-center uppercase">
+                <div class="flex justify-center flex-col">
                     <p>Studio </p>
                     <p> jore</p>
                 </div>
@@ -47,15 +47,15 @@ import "swiper/css";
 <style scoped>
 @keyframes glowing {
     0% {
-        text-shadow: 0 0 5px #fff;
+        text-shadow: 1px 2px 5px #fff;
     }
 
     50% {
-        text-shadow: 1px 2px 20px #d49a9afd;
+        text-shadow: 1px 2px 20px #000;
     }
 
     100% {
-        text-shadow: 0 0 5px rgb(255, 255, 255);
+        text-shadow: 1px 2px 5px rgb(255, 255, 255);
     }
 }
 

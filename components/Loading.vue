@@ -1,18 +1,23 @@
 <template>
-    <!-- <div id="preloader">
-        <div class="spinner"></div>
-     
-    </div> -->
-    <div id="preloader"
-        class="absolute inset-0 owner text-animatison text-black sm:text-[100px] text-[30px] font-bold glowing-text text-center tracking-[1.5rem] z-10 grid place-items-center uppercase">
-        <div>
-            <p>Studio </p>
-            <p> jore</p>
+    <transition name="fade">
+        <div v-if="open" id="preloader"
+            class="absolute inset-0 z-[100] owner text-animatison text-black sm:text-[100px] text-[50px] font-bold glowing-text text-center tracking-[1.5rem] z- grid place-items-center uppercase">
+
+            <div class="">
+                <p>Studio </p>
+                <p> jore</p>
+                <button @click="open = false"
+                    class="uppercase hover:bg-[white] hover:text-[#d49a9afd] mx-auto opacity-0 duration-300 sm:text-[50px] text-[30px] isnvisible font-serif bg-[#d49a9afd] py-[.7rem] px-[2rem] mt-[2rem] rounded-md show">Welcome</button>
+
+            </div>
         </div>
-        
-    </div>
+    </transition>
 </template>
 
+<script setup>
+const open = ref(true)
+// const
+</script>
 <style>
 #preloader {
     position: fixed;
@@ -26,24 +31,6 @@
     place-items: center;
 }
 
-.spinner {
-    width: 40px;
-    height: 40px;
-    border-radius: 100%;
-    background-color: #333;
-    animation: spin 1s infinite linear;
-
-}
-
-@keyframes spin {
-    0% {
-        transform: rotate(0deg);
-    }
-
-    100% {
-        transform: rotate(360deg);
-    }
-}
 
 @keyframes glowing {
     0% {
@@ -59,8 +46,60 @@
     }
 }
 
-.glowing-text {
+.glowing-text p {
     animation: glowing 1s infinite;
 }
-</style>
 
+.fade-enter-active,
+.fade-leave-active {
+    transition: opacity .5s;
+}
+
+.fade-enter,
+.fade-leave-to {
+    opacity: 0;
+}
+
+.door-enter-active {
+    -webkit-animation: door-enter both cubic-bezier(0.4, 0, 0, 1.5);
+    animation: door-enter both cubic-bezier(0.4, 0, 0, 1.5);
+    animation-duration: 800ms;
+}
+
+.door-leave-active {
+    -webkit-animation: door-leave both;
+    animation: door-leave both;
+    animation-duration: 800ms;
+}
+
+@keyframes door-enter {
+    from {
+        -webkit-transform: scale3d(0, 1, 1);
+        transform: scale3d(0, 1, 1);
+    }
+}
+
+@-webkit-keyframes door-leave {
+    60% {
+        -webkit-transform: scale3d(0.01, 1, 1);
+        transform: scale3d(0.01, 1, 1);
+    }
+
+    to {
+        -webkit-transform: scale3d(0, 1, 0.1);
+        transform: scale3d(0, 1, 0.1);
+    }
+}
+
+@keyframes door-leave {
+    60% {
+        -webkit-transform: scale3d(0.01, 1, 1);
+        transform: scale3d(0.01, 1, 1);
+    }
+
+    to {
+        -webkit-transform: scale3d(0, 1, 0.1);
+        transform: scale3d(0, 1, 0.1);
+    }
+}
+</style>
