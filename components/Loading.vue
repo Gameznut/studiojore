@@ -7,7 +7,7 @@
                 <p>Studio </p>
                 <p> jore</p>
                 <button @click="open = false"
-                    class="uppercase hover:bg-[white] hover:text-[#d49a9afd] mx-auto opacity-0 duration-300 sm:text-[50px] text-[30px] isnvisible font-serif bg-[#d49a9afd] py-[.7rem] px-[2rem] mt-[2rem] rounded-md show">Welcome</button>
+                    class="uppercase hover:bg-[white] hover:text-[#d49a9afd] mx-auto opacity-0 duration-300 sm:text-[50px] text-[30px]  font-serif bg-[#d49a9afd] py-[.7rem] px-[2rem] mt-[2rem] rounded-md show">Welcome</button>
 
             </div>
         </div>
@@ -16,7 +16,6 @@
 
 <script setup>
 const open = ref(true)
-// const
 </script>
 <style>
 #preloader {
