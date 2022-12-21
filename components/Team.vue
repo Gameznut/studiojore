@@ -35,7 +35,7 @@
     </section>
 </template>
 
-<style>
+<style scoped>
 .content .bg {
     position: absolute;
     inset: 0;

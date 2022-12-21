@@ -17,7 +17,7 @@
 <script setup>
 const open = ref(true)
 </script>
-<style>
+<style scoped>
 #preloader {
     position: fixed;
     top: 0;

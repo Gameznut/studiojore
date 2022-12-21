@@ -14,6 +14,7 @@ export default defineNuxtConfig({
                       var button = document.querySelector('.show')
                       button.style.opacity = "1"
                     });
+                    
                     `,
         },
       ],
