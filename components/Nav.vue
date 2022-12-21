@@ -17,7 +17,7 @@
                 </div>
                 <!-- Mobile link -->
                 <div
-                    class="flex sm:hidden main_container duration-300 s z-[100] fixed top-0 left-0  right-0 bg-[#ffffff] nav w-full justify-between items-center">
+                    class="flex sm:hidden main_container duration-300 s z-[100] sticky top-0 left-0  right-0 bg-[#ffffff] nav w-full justify-between items-center">
                     <div>
                         <NuxtLink to="/">logo</NuxtLink>
                     </div>
@@ -80,11 +80,11 @@ onMounted(() => {
 }
 
 .slide_left-enter-from {
-    transform: translatey(-100%);
+    transform: translateX(-100%);
 }
 
 .slide_left-leave-to {
-    transform: translatey(-100%);
+    transform: translateX(-100%);
 }
 
 .ham {
