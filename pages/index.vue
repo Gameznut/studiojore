@@ -175,10 +175,9 @@ onMounted(() => {
         b7 += 8
     }
 
-    const cards = document.querySelectorAll('.card');
-    const grids = document.querySelector('.grids');
-
-    window.addEventListener('resize', () => {
+    const loadgrid = ref(() => {
+        const cards = document.querySelectorAll('.card');
+        const grids = document.querySelector('.grids');
         if (window.innerWidth < 700) {
             grids.style.gridAutoRows = `320px`
             grids.style.gridTemplateColumns = `minmax(100px, 1fr)`
@@ -250,13 +249,16 @@ onMounted(() => {
 
         }
     })
+    loadgrid.value()
+    window.addEventListener('resize', () => {
+        loadgrid.value()
+    })
 
 })
 
 
 </script>
 <style>
-
 .card {
     grid-row: span 1;
     grid-column: span 1;
@@ -303,5 +305,4 @@ onMounted(() => {
     position: absolute;
     inset: 0;
 }
-
 </style>
