@@ -16,7 +16,7 @@ export default defineNuxtConfig({
                     });
                     
                     `,
-          src: "/loader.js",
+          src: "./loader.js",
         },
       ],
       meta: [

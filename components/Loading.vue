@@ -16,6 +16,9 @@
 
 <script setup>
 const open = ref(true)
+useHead({
+    // script: ['../assets/js/loader.js']
+})
 </script>
 <style scoped>
 #preloader {
@@ -28,8 +31,8 @@ const open = ref(true)
     z-index: 9999;
     display: grid;
     place-items: center;
-    min-height: 120vh;
-    height: 100%;
+    /* min-height: 120vh; */
+    /* height: 100%; */
 }
 
 
