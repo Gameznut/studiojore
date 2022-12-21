@@ -7,7 +7,7 @@
         <section id="works" class="bg-[#0000001e] text-[white] py-[5rem]">
             <div class="main_container">
                 <h1 class="text-[20px] tracking-[.6rem] uppercase font-bold mb-[1rem]">Works</h1>
-                <div class="my-[2rem] grids justify-center rounded-[20px] overflow-hidden">
+                <div class="my-[2rem] grids justify-center rounded-[20px] overflow-hidden grid">
                     <div :class="projects.length == 1 ? 'rounded-[10px]' : ''" class=" card photo-1"
                         v-for="project, index in projects" :key="project">
 
@@ -140,10 +140,6 @@ const projects = ref([
 ])
 
 onMounted(() => {
-    const test1 = ref(1)
-    let test = 1
-    console.log(test1.value);
-    console.log(test);
     let longHorizontalBlocks1 = []
     let longHorizontalBlocks2 = []
     let longVerticalBlocks1 = []
@@ -180,82 +176,91 @@ onMounted(() => {
     }
 
     const cards = document.querySelectorAll('.card');
+    const grids = document.querySelector('.grids');
 
-    for (let i = 0; i < cards.length; i++) {
-        if (longHorizontalBlocks1.includes(i)) {
-            console.log(cards[i]);
-            cards[i].style.gridColumn = `span 2`;
-            cards[i].style.gridRow = `span 1`;
-            cards[i].style.background = `coral`;
-            cards[i].id = i
+    window.addEventListener('resize', () => {
+        if (window.innerWidth < 700) {
+            grids.style.gridAutoRows = `320px`
+            grids.style.gridTemplateColumns = `minmax(100px, 1fr)`
+            for (let index = 0; index < cards.length; index++) {
+                cards[index].style.gridColumn = `span 1`;
+                cards[index].style.gridRow = `span 1`;
+            }
         }
-        if (longHorizontalBlocks2.includes(i)) {
-            console.log(cards[i]);
-            cards[i].style.gridColumn = `span 2`;
-            cards[i].style.gridRow = `span 1`;
-            cards[i].style.background = `red`;
-            cards[i].id = i
-        }
-        if (longVerticalBlocks1.includes(i)) {
-            console.log(cards[i]);
-            cards[i].style.gridColumn = `span 1`;
-            cards[i].style.gridRow = `span 2`;
-            cards[i].style.background = `gold`;
-            cards[i].id = i
+        else {
+            grids.style.gridAutoRows = `500px`
+            grids.style.gridTemplateColumns = `repeat(3, minmax(100px, 500px))`
+            for (let i = 0; i < cards.length; i++) {
+                if (longHorizontalBlocks1.includes(i)) {
+                    cards[i].style.gridColumn = `span 2`;
+                    cards[i].style.gridRow = `span 1`;
+                    cards[i].style.background = `coral`;
+                    cards[i].id = i
+                }
+                if (longHorizontalBlocks2.includes(i)) {
+                    cards[i].style.gridColumn = `span 2`;
+                    cards[i].style.gridRow = `span 1`;
+                    cards[i].style.background = `red`;
+                    cards[i].id = i
+                }
+                if (longVerticalBlocks1.includes(i)) {
+                    cards[i].style.gridColumn = `span 1`;
+                    cards[i].style.gridRow = `span 2`;
+                    cards[i].style.background = `gold`;
+                    cards[i].id = i
+
+                }
+
+                if (longVerticalBlocks2.includes(i)) {
+                    cards[i].style.gridColumn = `span 1`;
+                    cards[i].style.gridRow = `span 2`;
+                    cards[i].style.background = `white`;
+                    cards[i].id = i
+
+                }
+                if (blocks0.includes(i)) {
+                    cards[i].style.gridColumn = `span 1`;
+                    cards[i].style.gridRow = `span 1`;
+                    cards[i].style.background = `green`;
+                    cards[i].id = i
+
+                }
+                if (blocks5.includes(i)) {
+                    cards[i].style.gridColumn = `span 1`;
+                    cards[i].style.gridRow = `span 1`;
+                    cards[i].style.background = `pink`;
+                    cards[i].id = i
+
+                }
+                if (blocks6.includes(i)) {
+                    cards[i].style.gridColumn = `span 1`;
+                    cards[i].style.gridRow = `span 1`;
+                    cards[i].style.background = `yellow`;
+                    cards[i].id = i
+
+                }
+                if (blocks7.includes(i)) {
+                    cards[i].style.gridColumn = `span 1`;
+                    cards[i].style.gridRow = `span 1`;
+                    cards[i].style.background = `blue`;
+                    cards[i].id = i
+                }
+
+            }
 
         }
-
-        if (longVerticalBlocks2.includes(i)) {
-            console.log(cards[i]);
-            cards[i].style.gridColumn = `span 1`;
-            cards[i].style.gridRow = `span 2`;
-            cards[i].style.background = `white`;
-            cards[i].id = i
-
-        }
-        if (blocks0.includes(i)) {
-            console.log(cards[i]);
-            cards[i].style.gridColumn = `span 1`;
-            cards[i].style.gridRow = `span 1`;
-            cards[i].style.background = `green`;
-            cards[i].id = i
-
-        }
-        if (blocks5.includes(i)) {
-            console.log(cards[i]);
-            cards[i].style.gridColumn = `span 1`;
-            cards[i].style.gridRow = `span 1`;
-            cards[i].style.background = `pink`;
-            cards[i].id = i
-
-        }
-        if (blocks6.includes(i)) {
-            console.log(cards[i]);
-            cards[i].style.gridColumn = `span 1`;
-            cards[i].style.gridRow = `span 1`;
-            cards[i].style.background = `yellow`;
-            cards[i].id = i
-
-        }
-        if (blocks7.includes(i)) {
-            console.log(i);
-            console.log(cards[i]);
-            cards[i].style.gridColumn = `span 1`;
-            cards[i].style.gridRow = `span 1`;
-            cards[i].style.background = `blue`;
-            cards[i].id = i
-
-        }
-
-    }
+    })
 
 })
+
+
 </script>
 <style>
-.grids {
-    display: grid;
-    grid-template-columns: minmax(100px, 1fr);
-    grid-auto-rows: 320px;
+
+.card {
+    grid-row: span 1;
+    grid-column: span 1;
+    background-color: #898bff;
 }
 
 .card,
@@ -299,47 +304,4 @@ onMounted(() => {
     inset: 0;
 }
 
-/* .card:last-child {
-    border-bottom-right-radius: 10px;
-    border-bottom-left-radius: 10px;
-}
-
-.card:first-child {
-    border-top-right-radius: 10px;
-    border-top-left-radius: 10px;
-} */
-
-@media (min-width: 700px) {
-    .grids {
-        grid-template-columns: repeat(3, minmax(100px, 500px));
-        grid-auto-rows: 500px;
-    }
-
-    /* .card:nth-child(odd),
-    .card:nth-child(1),
-    .card:nth-child(4),
-    .card:nth-child(9) {
-        grid-row: span 1;
-        grid-column: span 2;
-        background-color: #898bff;
-    }
-
-    .card:nth-child(3),
-    .card:nth-child(5),
-    .card:nth-child(10) {
-        grid-row: span 2;
-        grid-column: span 1;
-        background-color: aquamarine;
-    }
-
-    .card:nth-child(7),
-    .card:nth-child(8),
-    .card:nth-child(11) {
-        grid-row: span 1;
-        grid-column: span 1;
-        background-color: blueviolet;
-    } */
-
-
-}
 </style>
