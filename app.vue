@@ -4,6 +4,9 @@
   <NuxtPage />
 
 </template>
-<style>
+<script setup>
 
-</style>
+onMounted(() => {
+  
+})
+</script>

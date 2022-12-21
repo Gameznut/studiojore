@@ -10,12 +10,6 @@ export default defineNuxtConfig({
       title: "📷Studio Jore",
       script: [
         {
-          children: `window.addEventListener("load", function () {
-                      var button = document.querySelector('.show')
-                      button.style.opacity = "1"
-                    });
-                    
-                    `,
           src: "./loader.js",
         },
       ],

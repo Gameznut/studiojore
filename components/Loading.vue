@@ -1,7 +1,7 @@
 <template>
     <transition name="fade">
         <div v-if="open" id="preloader"
-            class="absolute inset-0 z-[100] owner text-animatison text-black sm:text-[100px] text-[50px] font-bold glowing-text text-center tracking-[1.5rem] z- grid place-items-center uppercase">
+            class="absolute  inset-0 z-[100] owner text-animatison text-black sm:text-[100px] text-[50px] font-bold glowing-text text-center tracking-[1.5rem] z- grid place-items-center uppercase">
 
             <div class="">
                 <p>Studio </p>
@@ -16,8 +16,14 @@
 
 <script setup>
 const open = ref(true)
-useHead({
-    // script: ['../assets/js/loader.js']
+
+watch(open, (x) => {
+    const body = document.querySelector('body');
+
+    if (!x) {
+        body.classList.add('!overflow-auto')
+        console.log('hide')
+    }
 })
 </script>
 <style scoped>
