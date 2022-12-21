@@ -28,7 +28,7 @@ const open = ref(true)
     z-index: 9999;
     display: grid;
     place-items: center;
-    height: 100vh;
+    height: 1200vh;
 }
 
 
