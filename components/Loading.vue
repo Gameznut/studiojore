@@ -18,10 +18,12 @@
 const open = ref(true)
 
 watch(open, (x) => {
-    const body = document.querySelector('body');
+    const body = document.querySelector('.body');
+    const mainbody = document.querySelector('body');
 
     if (!x) {
-        body.classList.add('!overflow-auto')
+        body.classList.add('!overflow-auto', '!bg-[#f8f3f3]', '!block')
+        mainbody.classList.add('!overflow-auto', '!bg-[#f8f3f3]', '!block')
         console.log('hide')
     }
 })
@@ -33,12 +35,10 @@ watch(open, (x) => {
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: #000000fd;
+    background-color: #000000;
     z-index: 9999;
     display: grid;
     place-items: center;
-    /* min-height: 120vh; */
-    /* height: 100%; */
 }
 
 

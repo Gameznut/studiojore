@@ -1,12 +1,13 @@
 <template>
   <Loading />
   <NuxtLoadingIndicator />
-  <NuxtPage />
-
+  <div class="body">
+    <NuxtPage />
+  </div>
 </template>
 <script setup>
 
 onMounted(() => {
-  
+
 })
 </script>
