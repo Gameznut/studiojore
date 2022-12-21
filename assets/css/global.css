@@ -16,7 +16,8 @@ body {
 
 .body{
   overflow: hidden;
-  display: none;
+  opacity: 0;
+  transition: all 3s;
 }
 
 ::-webkit-scrollbar {

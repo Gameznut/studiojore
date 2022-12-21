@@ -22,8 +22,11 @@ watch(open, (x) => {
     const mainbody = document.querySelector('body');
 
     if (!x) {
-        body.classList.add('!overflow-auto', '!bg-[#f8f3f3]', '!block')
-        mainbody.classList.add('!overflow-auto', '!bg-[#f8f3f3]', '!block')
+        body.classList.add('!opacity-100')
+        setTimeout(() => {
+            body.classList.remove('body', '!opacity-100')
+        }, 5);
+        mainbody.classList.add('!overflow-auto', '!bg-[#f8f3f3]')
         console.log('hide')
     }
 })
@@ -62,7 +65,7 @@ watch(open, (x) => {
 
 .fade-enter-active,
 .fade-leave-active {
-    transition: opacity .5s;
+    transition: opacity 2.5s;
 }
 
 .fade-enter,
