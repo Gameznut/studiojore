@@ -140,7 +140,10 @@ const projects = ref([
 ])
 
 onMounted(() => {
-
+    const test1 = ref(1)
+    let test = 1
+    console.log(test1.value);
+    console.log(test);
     let longHorizontalBlocks1 = []
     let longHorizontalBlocks2 = []
     let longVerticalBlocks1 = []
@@ -175,10 +178,6 @@ onMounted(() => {
         b6 += 8
         b7 += 8
     }
-
-    const element = document.querySelector('.grided');
-
-    element.style.display = 'grid';
 
     const cards = document.querySelectorAll('.card');
 
